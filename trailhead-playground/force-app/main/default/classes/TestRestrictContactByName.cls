@@ -4,11 +4,19 @@ public class TestRestrictContactByName {
     @isTest
     static void VerifyInvalidName(){
 
-        Database.SaveResult dmlOperation = Database.insert(new Contact(LastName = 'INVALIDNAME'));
+        Boolean validated;
+
+        Test.startTest();
+
+        try {
+            Database.insert(new Contact(LastName = 'INVALIDNAME'));            
+        } catch (DmlException e) {
+            validated = e.getMessage().contains('FIELD_CUSTOM_VALIDATION_EXCEPTION');
+        }        
         
+        System.assert(validated);
 
-
-        System.assert(dmlOperation.getErrors().size() > 0);
+        Test.stopTest();
     }
 
-}
+} 
