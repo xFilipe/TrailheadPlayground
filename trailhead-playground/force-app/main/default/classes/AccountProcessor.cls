@@ -10,8 +10,7 @@ public class AccountProcessor {
 
             for(Contact contact:[select Id, AccountId from Contact where AccountId in: accountIdList order by AccountId]){                
                 if(currentAccount?.Id != contact.AccountId){   
-                    currentAccount = new Account(Id = contact.AccountId);     
-                    currentAccount.Number_Of_Contacts__c = 1;
+                    currentAccount = new Account(Id = contact.AccountId, Number_Of_Contacts__c = 1);     
                     accountMap.put(currentAccount.Id, currentAccount);
                 }else{     
                     counter++;               
