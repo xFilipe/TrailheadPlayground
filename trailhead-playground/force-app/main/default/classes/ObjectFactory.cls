@@ -16,4 +16,12 @@ public class ObjectFactory{
         return leads;
     }
 
+    public static List<Account> generateAccount(Integer quantity, String billingState){
+
+        List<Account> accounts = new List<Account>();
+        for(Integer i = 0; i < quantity; i++) accounts.add(new Account(Name = 'Test' + (i +1), BillingState = billingState));
+
+        return accounts;
+    }
+
 }
