@@ -4,5 +4,6 @@
     "**/bower_components": true,
     "**/.sfdx": true
   },
-  "vlocity.sfdxUsername": "filipe@dev.com"
+  "vlocity.sfdxUsername": "filipe@dev.com",
+  "vlocity.salesforce.developerLogsVisibility": "all"
 }

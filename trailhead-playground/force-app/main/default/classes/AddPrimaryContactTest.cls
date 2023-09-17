@@ -1,5 +1,5 @@
 @IsTest
-public class AddPrimaryContactTest{
+public with sharing class AddPrimaryContactTest{
     
     @IsTest
     static void TestAddPrimaryContact(){
